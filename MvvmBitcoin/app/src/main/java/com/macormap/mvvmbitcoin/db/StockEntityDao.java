@@ -10,6 +10,12 @@ import com.macormap.mvvmbitcoin.db.entities.StockEntity;
 
 import java.util.List;
 
+//  Carlo Macor  :  February 2018
+
+
+/**
+ *  Dao to comunicate with Database
+ */
 
 @Dao
 public interface StockEntityDao {
@@ -21,7 +27,7 @@ public interface StockEntityDao {
     void insertAll(List<StockEntity> products);
 
 
- //   @Query("DELETE FROM stocks")
- //   public void deleteAll();
+    //   @Query("DELETE FROM stocks")
+    //   public void deleteAll();
 
 }

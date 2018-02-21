@@ -1,6 +1,10 @@
 package com.macormap.mvvmbitcoin.utils;
 
 
+/**
+ *  Static functions to get the description of symbols
+ */
+
 public class CoderStocks {
 
    public static String codStock(int i) {

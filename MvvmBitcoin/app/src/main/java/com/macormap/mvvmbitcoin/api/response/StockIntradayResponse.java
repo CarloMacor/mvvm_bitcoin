@@ -7,6 +7,13 @@ import com.macormap.mvvmbitcoin.db.entities.IntradayEntity;
 import java.util.ArrayList;
 import java.util.List;
 
+//  Carlo Macor  :  February 2018
+
+
+/** ApiServise has :   Observable<StockIntradayResponse> getStockValuesDay(@Query("istab") String symb);
+ *  so we have the function to map data in  List<IntradayEntity>  ready to design the Mysurface
+ */
+
 
 public class StockIntradayResponse {
 

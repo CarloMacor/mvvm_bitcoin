@@ -19,6 +19,10 @@ import java.util.List;
 
 import io.reactivex.Observable;
 
+//  Carlo Macor  :  February 2018
+
+/** the fragment that show the Graph in the Mysurface  */
+
 public class IntradayFragment extends Fragment {
 
     private static final String KEY_SYMB = "key_symb";
@@ -31,6 +35,7 @@ public class IntradayFragment extends Fragment {
     public IntradayFragment() {
     }
 
+    /**  get the symbol selected into argument in newInstance**/
     public static IntradayFragment newInstance(String paramsymb) {
         IntradayFragment fragment = new IntradayFragment();
         Bundle args = new Bundle();
@@ -39,6 +44,7 @@ public class IntradayFragment extends Fragment {
         return fragment;
     }
 
+    /**  get the symbol selected from the argument **/
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,16 +53,22 @@ public class IntradayFragment extends Fragment {
         }
     }
 
+    /** Inflate the layout  */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-         view = inflater.inflate(R.layout.fragment_intraday, container, false);
+        view = inflater.inflate(R.layout.fragment_intraday, container, false);
         TextView textView = (TextView)  view.findViewById(R.id.infotxtsymb);
         textView.setText(mSymb);
         txtloading = view.findViewById(R.id.idloading);
         return view;
     }
 
+
+    /** onActivityCreated is after onCreateView
+     *  so after inflate we get the stockViewModel from MainActivity
+     *  we have the observer to subscribe and get data for the graph
+     */
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

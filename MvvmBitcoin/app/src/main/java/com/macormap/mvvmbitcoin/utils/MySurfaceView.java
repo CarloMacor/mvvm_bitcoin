@@ -14,6 +14,12 @@ import com.macormap.mvvmbitcoin.db.entities.IntradayEntity;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/** to design the graph of intrady stock using the list of
+ *  IntradayEntity.
+ */
+
+
 public class MySurfaceView extends SurfaceView {
 
     public Paint mPaint;
@@ -64,6 +70,8 @@ public class MySurfaceView extends SurfaceView {
                     laPolilinea.get(laPolilinea.size() - 1).getmPaint());
         }
     }
+
+    /**  Update the polyline with the new data  */
 
     public void aggiornaPath(List<IntradayEntity> rowStock) {
         laPolilinea.clear();

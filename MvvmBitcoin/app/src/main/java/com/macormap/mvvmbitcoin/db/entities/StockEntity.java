@@ -4,7 +4,11 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+//  Carlo Macor  :  February 2018
 
+/**
+ *  Table of database
+ */
 
 @Entity(tableName = "stocks")
 public class StockEntity {
@@ -45,7 +49,7 @@ public class StockEntity {
     public String getValueSymbStr() {
         Double dvalue = Double.parseDouble(valueSymb);
         if (dvalue>10) { return String.format("$ %,.0f", dvalue); }
-                  else { return String.format("$ %,.2f", dvalue); }
+        else { return String.format("$ %,.2f", dvalue); }
     }
 
 }

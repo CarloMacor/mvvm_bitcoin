@@ -15,6 +15,12 @@ import com.macormap.mvvmbitcoin.ui.StockEntityCallback;
 import java.util.ArrayList;
 import java.util.List;
 
+//  Carlo Macor  :  February 2018
+
+/**  Adapter fro the recyclerView of StockListFragment
+ *   Note that it use Databinding to set data in GUI
+ */
+
 
 public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder>  {
 
@@ -29,17 +35,17 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
 
 
     public void updateDataList(List<StockEntity> mstockEntityList) {
-       if (stockEntityList==null) { stockEntityList = new ArrayList<StockEntity>(); }
-       stockEntityList.clear();
-       stockEntityList.addAll(mstockEntityList);
-       notifyDataSetChanged();
+        if (stockEntityList==null) { stockEntityList = new ArrayList<StockEntity>(); }
+        stockEntityList.clear();
+        stockEntityList.addAll(mstockEntityList);
+        notifyDataSetChanged();
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RowStockBinding binding = DataBindingUtil
-                          .inflate(LayoutInflater.from(parent.getContext()),
-                          R.layout.row_stock,parent,false);
+                .inflate(LayoutInflater.from(parent.getContext()),
+                        R.layout.row_stock,parent,false);
 
         binding.setCallback(mStockEntityCallback);
 

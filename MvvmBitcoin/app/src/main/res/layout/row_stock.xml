@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!--
+Layout for StockAdapter.java
+Use of Databinding
+to display in Textview StockEntity fields
+and the callback "@{() ->  callback.onClick(stockdata)}
+to change this fragment with the
+Intraday fragment , note that we pass the stockdata parameter to know
+the row and get the relative stock symbol clicked
+note that type is : com.macormap.mvvmbitcoin.ui.StockEntityCallback ( and interface )
+and it's passed from StockListFragment that define the action
+private final StockEntityCallback mStockClickCallback
+-->
+
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
@@ -52,6 +66,6 @@
 
         </LinearLayout>
 
-</android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>
 
 </layout>

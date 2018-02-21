@@ -19,6 +19,23 @@ import dagger.Provides;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+//  Carlo Macor  :  February 2018
+
+
+/** this module is called from AppComponent
+ * @Component(modules = { AppModule.class } )
+ * for this reason it start with @Module
+ *
+ * so all the @Provides that are present in this unit are available
+ * to inject. : Application, ApiStockService, StockDatabase, StockRepository, ViewModel, ViewModelProvider.Factory
+ *
+ * in this case I need to create a Room database , and to build it I need Application reference.
+ * for this reason there is a constructor with Application parameter used in Room constructor of database
+ *
+ * of course in the place where this Module is initialized, i need the Application info
+ * infact we use  ....  .appModule(new AppModule(this))  ....   in StockApplication.java and this is the Application.
+ */
+
 
 @Module
 public class AppModule {

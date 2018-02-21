@@ -1,5 +1,11 @@
 package com.macormap.mvvmbitcoin.db.entities;
 
+//  Carlo Macor  :  February 2018
+
+/**
+ *  used to display the Intraday graph
+ */
+
 public class IntradayEntity {
 
     private Integer index;
@@ -16,7 +22,6 @@ public class IntradayEntity {
     public void   setValueStock(Double val ) { valueStock = val; }
 
     public Double getValueStock()            { return valueStock; }
-
 
 
 }

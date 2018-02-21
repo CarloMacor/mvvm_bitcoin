@@ -16,6 +16,9 @@ import com.macormap.mvvmbitcoin.adapter.StockAdapter;
 import com.macormap.mvvmbitcoin.db.entities.StockEntity;
 import com.macormap.mvvmbitcoin.modelview.StockViewModel;
 
+//  Carlo Macor  :  February 2018
+
+/** the fragment to display in a recycler view the list of stocks and relative values */
 
 public class StockListFragment extends Fragment {
 
@@ -30,6 +33,8 @@ public class StockListFragment extends Fragment {
     public StockListFragment() {
     }
 
+
+    /** Inflate the layout  */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         viewfrag = inflater.inflate(R.layout.fragment_stock_list, container, false);
@@ -37,18 +42,24 @@ public class StockListFragment extends Fragment {
         return viewfrag;
     }
 
+
+    /** onActivityCreated is after onCreateView
+     *  so after inflate we get the stockViewModel from MainActivity
+     *  we set the livedata to Adapter
+     *  so as on as change the dbase the adapter update the GUI
+     */
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
         stockViewModel= ((MainActivity) getActivity()).getModel();
-
         stockViewModel.getLivedataDatabase().observe(this, s -> {
             stockAdapter.updateDataList(s);
         });
         stockViewModel.updateNetData();
     }
 
+
+    /** Setup the view with a recyclerView and relative Adapter  */
     private void setupView() {
         recyclerView = viewfrag.findViewById(R.id.recycle);
         recyclerView.setHasFixedSize(true);
@@ -62,12 +73,15 @@ public class StockListFragment extends Fragment {
         recyclerView.setAdapter(stockAdapter);
     }
 
-    private final StockEntityCallback mStockClickCallback = new StockEntityCallback() {
-        @Override
-        public void onClick(StockEntity stockEntity) {
-            if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
-                ((MainActivity) getActivity()).changeFrag(stockEntity);
-            }
+
+    /** used in row_stock.xml in databinding
+     *  called at click on the row cardview.
+     */
+    private final StockEntityCallback mStockClickCallback = stockEntity -> {
+        if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
+            ((MainActivity) getActivity()).changeFrag(stockEntity);
         }
     };
+
+
 }

@@ -9,8 +9,7 @@ import com.macormap.mvvmbitcoin.di.DaggerAppComponent;
 
 //  Carlo Macor  :  February 2018
 
-/**
- *    AppComponent mAppComponent;   is created using Dagger
+/**   AppComponent mAppComponent;   is created using Dagger
  *    Note that we write            : DaggerAppComponent.builder().
  *    because we have a unit named  :       AppComponent
  *    if We have a unit named NetComponent We'll write DaggerNetComponent.builder().

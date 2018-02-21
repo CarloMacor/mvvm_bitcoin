@@ -8,7 +8,11 @@ import com.macormap.mvvmbitcoin.utils.CoderStocks;
 import java.util.ArrayList;
 import java.util.List;
 
+//  Carlo Macor  :  February 2018
 
+/** ApiServise has :  Observable<StockLastFullResponse> getLastStocksValues();
+ *  so we have the function to map data in  List<StockEntity>  ready to update database
+ */
 
 public class StockLastFullResponse {
 
@@ -19,6 +23,8 @@ public class StockLastFullResponse {
     public List<StockLastSingleResponse> getListaStockValueRisposta() {
         return listaStockValueRisposta;
     }
+
+    /** used to map data */
 
     public List<StockEntity> listStockResponse() {
         StockEntity stockEntity;

@@ -5,6 +5,11 @@ import android.arch.lifecycle.ViewModelProvider;
 
 import javax.inject.Inject;
 
+//  Carlo Macor  :  February 2018
+
+/**
+ *  to solve the Dagger DI as described in mainactivity
+ */
 
 public class ViewModelFactory implements ViewModelProvider.Factory {
     private StockViewModel mViewModel;

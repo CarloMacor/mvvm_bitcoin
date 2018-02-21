@@ -7,6 +7,13 @@ import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
+//  Carlo Macor  :  February 2018
+
+/**
+ *  to get the data from macormap.com
+ *  used by AppModule.java to @Provides the apiservice
+ *  and past as parameter by Dagger in StockRepositoryImpl
+ */
 
 public interface ApiStockService {
 
